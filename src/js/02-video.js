@@ -9,9 +9,7 @@ player.on('timeupdate', throttle(data => {
 
 //player.setCurrentTime(localStorage.getItem("videoplayer-current-time"));
 
-let time = localStorage.getItem("videoplayer-current-time");
+const time = localStorage.getItem("videoplayer-current-time");
+const res = time ? time : 0;
 
-if (time === false) {
-    time = 0;
-};
-player.setCurrentTime(time);
+player.setCurrentTime(res);
